@@ -2,14 +2,18 @@
 #include <list>
 #include <stdlib.h>
 
-using namespace std;
+#define fr(i, a, c) for (int i = a; i < c; i++)
+#define sc1(a) scanf("%lld", &a)
+#define sc2(a, b) scanf("%lld %lld", &a, &b)
+#define LLI long long int
+#define ULL unsigned long int;
 
+using namespace std;
 
 class Grafo
 {
 	int V;
 	list<int> *adj;
-
 public:
 	Grafo(int V);
 	void addArest(int v1, int v2);
@@ -24,11 +28,8 @@ Grafo::Grafo(int V){
 }
 
 void Grafo::clearGraph() {
-	for (int i = 0; i < V; ++i)
-	{
-		adj[i].clear();
-	}
-
+	fr(i, 0 , V) adj[i].clear();
+	adj = NULL;
 	this->V = 0;
 }
 
@@ -43,17 +44,10 @@ int Grafo::grauDeSaida(int v){
 int Grafo::BFS(int raiz){
 	bool *visitado = new bool[V];
 
-	for (int i = 0; i < V; ++i)
-	{
-		visitado[i] = false;
-	}
-
+	fr (i, 0, V) visitado[i] = false;
 	list<int> fila;
-
 	visitado[raiz] = true;
-
 	fila.push_back(raiz);
-
 	list<int>::iterator i;
 
 	while(!fila.empty()){
@@ -68,10 +62,7 @@ int Grafo::BFS(int raiz){
 			}
 		}
 	}
-	for (int i = 1; i < V; ++i)
-	{
-		if (!visitado[i]) return 0;
-	}
+	fr(i, 1, V) if (!visitado[i]) return 0;
 
 	return 1;
 }
@@ -87,16 +78,15 @@ int main(int argc, char const *argv[])
 		if (!(e || l)) break;
 		e++;
 		Grafo graph(e);
-		for (int i = 0; i < l; ++i)
+		fr (i, 0, l)
 		{
 			scanf("%d %d", &pts, &ptc);
 			graph.addArest(pts, ptc);
 		}
 
 		if (graph.BFS(1)) printf("Teste %d\nnormal\n", count);
-
 		else printf("Teste %d\nfalha\n", count);
-		
+
 		graph.clearGraph();
 		printf("\n");
 		count++;
