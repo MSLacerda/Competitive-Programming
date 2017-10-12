@@ -16,13 +16,9 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 
-	int a,b;
-
-	sc1(a, b);
-	if (a == 0)	printf("C\n");
-	if (a == 1 && b == 0) printf("B\n");
-	if (a == 1 && b == 1) printf("A\n");
-	return 0;
+	long long int a;
+	scanf("%Ld", &a);
+	printf("%Ld\n",a%3);
 }
 
 

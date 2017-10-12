@@ -12,16 +12,14 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-
 int main(int argc, char const *argv[])
 {
+	string ass, panel;
 
-	int a,b;
+	cin >> ass >> panel;
 
-	sc1(a, b);
-	if (a == 0)	printf("C\n");
-	if (a == 1 && b == 0) printf("B\n");
-	if (a == 1 && b == 1) printf("A\n");
+	cout << panel.find(ass);
+
 	return 0;
 }
 

@@ -82,6 +82,7 @@ int main(int argc, char const *argv[])
 		{
 			scanf("%d %d", &pts, &ptc);
 			graph.addArest(pts, ptc);
+			graph.addArest(ptc, pts);
 		}
 
 		if (graph.BFS(1)) printf("Teste %d\nnormal\n", count);

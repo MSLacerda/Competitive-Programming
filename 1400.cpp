@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string>
-#include <list>
-#include <vector>
+#include <bits/stdc++.h>
 
 #define fr(i, a, c) for (int i = a; i  < c; i++)
 #define sc1(a) scanf("%d", &a)
@@ -12,17 +8,19 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-
-int main(int argc, char const *argv[])
-{
-
-	int a,b;
-
-	sc1(a, b);
-	if (a == 0)	printf("C\n");
-	if (a == 1 && b == 0) printf("B\n");
-	if (a == 1 && b == 1) printf("A\n");
+int hasSeven(int n){
+	int aux = n;
+	if (aux == 7) return 1;
+	while (aux > 9){
+		if (aux%10 == 7) return 1;
+		aux = aux/10;
+	}
 	return 0;
 }
 
+
+int main(int argc, char const *argv[])
+{
+	
+}
 
