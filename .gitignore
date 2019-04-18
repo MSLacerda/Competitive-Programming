@@ -1,0 +1,7 @@
+!.gitignore
+!*.cpp
+!*.c
+!*.py
+!*.java
+!*.js
+!*.go
